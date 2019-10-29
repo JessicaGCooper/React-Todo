@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 const Todo = props => {
@@ -8,9 +8,10 @@ const Todo = props => {
         /* if 'done: true' then classname = "todo done" else classname="todo" */
         onClick={() =>  props.toggleDone(props.item.id)}
         >
-        <p className="todo">{props.item.todo}</p>
+        <p className="todoItem">{props.item.todo}</p>
       </div>
     )
   };
   
   export default Todo
+

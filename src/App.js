@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
@@ -17,6 +18,21 @@ const data = [
   {
     todo: 'Clean Room',
     id: 1528817084358,
+    done: false
+  },
+  {
+    todo: 'Escape Alien',
+    id: 1528817084378,
+    done: false
+  },
+  {
+    todo: 'Find Paperwork',
+    id: 1528837084378,
+    done: false
+  },
+  {
+    todo: 'Avoid Crocodiles',
+    id: 1528817084378,
     done: false
   }
 ];
@@ -77,24 +93,65 @@ filterDone = () => {
 
   render() {
     return (
-      <div className='App'>
-        <div className='header'>
-          <h2>Welcome to Life's Obstacle Course!</h2>
-          <h3>Each Obstacle you overcome gets you closer to freedom!</h3>
-          <h3>When you see an Obstacle you must add it to the list!</h3>
-          <h4>May the odds ever be in your favor!</h4>
-          <TodoForm 
-            addTodo={this.addTodo}
-          />
-        </div>      
-        <TodoList 
-          todoItems={this.state.todoItems}
-          toggleDone={this.toggleDone}
-          filterDone={this.filterDone} 
-          /> 
-      </div>
+      <AppContainer className="AppContainer">
+        <div className='AppTop'>
+          <section className='listHeader'>
+            <ListHeading className="listHeading">Welcome to Life's Obstacle Course!</ListHeading>
+            <ListSubHeading>Each Obstacle you overcome gets you closer to freedom.</ListSubHeading>
+            <ListSubHeading>When you see an Obstacle you must add it to the list.</ListSubHeading>
+            <Message>May the odds ever be in your favor!</Message>
+          </section>
+          <section className="TodoFormContainer">
+            <TodoForm 
+              addTodo={this.addTodo}
+            />
+          </section>
+          <section className='TodoList Container'>      
+            <TodoList 
+              todoItems={this.state.todoItems}
+              toggleDone={this.toggleDone}
+              filterDone={this.filterDone} 
+            /> 
+          </section>
+        </div>
+    </AppContainer>
     );
   }
 }
 
 export default App;
+
+const AppContainer = styled.div`
+width: 80%;
+margin-right: 10%;
+margin-left: 10%;
+`;
+
+const AppContent = styled.section``;
+
+const ListHeader = styled.section``;
+
+const ListHeading = styled.h2`
+color: #2d6071;
+font-size: 2.25rem;
+padding: 10px;
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+text-transform: uppercase;
+margin-top: 20px;
+`;
+
+const ListSubHeading = styled.h3`
+color: #2d6071;
+font-size: 1.5rem;
+padding: 10px;
+text-align: center;
+font-family: 'Montserrat', sans-serif;`;
+
+const Message = styled.h4`
+color: #2d6071;
+font-size: 1rem;
+padding: 10px;
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+`;

@@ -1,14 +1,24 @@
 .todo {
-    background-color: dodgerblue;
-    width: 45%;
-    text-align: left;
-    margin: 4px 0;
-    padding-left: 8px;
+    background-color: #3e7d20;
+    text-align: center;
     cursor: pointer;
     color: black;
+    font-size: 1.25rem;
+    font-family: 'Satisfy', cursive;
+    width: 45%;
+    border-radius: 10px;
+    height: 25px;
+    padding: 10px;
+    padding-top: 15px;
+    margin: 10px;
+    color:  #8bd890;
   }
   
   .todo.done{
-    background-color: pink;
     text-decoration: line-through;
   }
+
+
+  /* font-family: 'Satisfy', cursive;
+  font-family: 'Glegoo', serif;
+  font-family: 'Marcellus SC', serif; */

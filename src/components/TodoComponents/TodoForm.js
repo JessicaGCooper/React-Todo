@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 
 class TodoForm extends React.Component {
@@ -31,19 +32,70 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="addTodo">Add an Obstacle to Freedom</label>
-                <input 
+            <FormContainer onSubmit={this.handleSubmit}>
+                <LabelContainer>
+                    <LabelInput htmlFor="addTodo">Add an Obstacle to Freedom:</LabelInput>
+                </LabelContainer>
+                <AddObstacleInput
                 type="text"
                 name="addTodo"
                 id="addTodo"
                 value={this.state.newTodo}
                 onChange={this.handleChanges}
                 />
-                <button>Add Obstacle</button>
-            </form>
+                <AddObstacle className="addObstacle">Add Obstacle</AddObstacle>
+            </FormContainer>
         )
     }
 };
 
 export default TodoForm
+
+const AddObstacle = styled.button`
+    width: 40%;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #2e8ea0;
+    border: 2px solid #2e8ea0;
+    font-weight: bolder;
+`;
+
+const FormContainer = styled.form`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+`;
+
+const LabelContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+`;
+
+const LabelInput = styled.label`
+    width: 100%;
+    margin-right: 5px;
+    padding: 15px;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #3e7d20;
+    text-align: right;
+`;
+
+const AddObstacleInput = styled.input`
+    width: 40%;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #2e8ea0;
+    border: 2px solid #2e8ea0;
+`;
